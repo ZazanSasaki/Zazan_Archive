@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#09090d"><meta name="description" content="ZAZAN COLLECTIONS — your personal archive"><title>ZAZAN COLLECTIONS</title><link rel="manifest" href="manifest.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<div class="ambient a"></div><div class="ambient b"></div><header class="topbar"><a class="brand" href="#home"><span class="mark">Z<sup>✦</sup></span><span>ZAZAN <b>COLLECTIONS</b><small>PERSONAL MEDIA ARCHIVE</small></span></a><nav id="nav"><a href="#home">Overview</a><a href="#archive">Archive</a><a href="#manga">Manga Reader</a><a href="#gallery">Gallery</a><a href="#controlCenter">Control Center</a></nav><div class="top-actions"><span id="saveState">● SAVED</span><button class="btn outline" id="backupTop">↧ Backup</button><button class="btn outline" id="themeToggle">☼ THEME</button><button class="btn outline" id="notifyButton">♢ <span id="notificationCount">0</span></button><button class="btn primary" id="addTop">＋ Add New</button></div><button class="mobile-menu" id="mobileMenu">☰</button></header>
+<main id="home"><section class="hero"><div class="hero-bg"></div><div class="hero-overlay"></div><div class="hero-copy"><div class="eyebrow">✦ YOUR PERSONAL COLLECTION / EST. 2026</div><h1>YOUR WORLD.<br><em>YOUR ARCHIVE.</em></h1><p>Every story leaves a mark. Keep the ones that matter.<br>Anime, manga, series and the art you love — all in one place.</p><div class="hero-actions"><a class="btn primary big" href="#archive">EXPLORE COLLECTION ↗</a><button class="btn glass big" id="heroAdd">＋ ADD TO YOUR WORLD</button></div><div class="hero-meta">CURATED BY ZAZAN SASAKI <span>01 / COLLECTION UNIVERSE</span></div></div><div class="vertical-note">COLLECT THE MOMENTS THAT STAY.</div></section>
+<section class="dashboard wrap"><div><div class="eyebrow">THE NUMBERS / 001</div><h2>A UNIVERSE OF STORIES.</h2><p class="muted">Your archive, always growing.</p></div><div class="stats"><article><span>TOTAL ENTRIES</span><strong id="totalStat">000</strong><small>IN YOUR ARCHIVE</small></article><article><span>COMPLETED</span><strong id="completedStat">000</strong><small>FINISHED STORIES</small></article><article><span>IN PROGRESS</span><strong id="progressStat">000</strong><small>CURRENTLY ACTIVE</small></article><article><span>TO DISCOVER</span><strong id="plannedStat">000</strong><small>ON YOUR LIST</small></article></div></section>
+<div class="dashboard-widgets" id="dashboardWidgets">
+<article class="dash-widget" draggable="true" data-widget="progress"><div class="widget-top"><span>COLLECTION PROGRESS</span><b>↗</b></div><div class="mini-chart" id="progressChart"></div><small>STATUS DISTRIBUTION</small></article>
+<article class="dash-widget" draggable="true" data-widget="achievements"><div class="widget-top"><span>ACHIEVEMENTS</span><b>✦</b></div><div class="achievement-row" id="achievementRow"></div><small>COLLECTION MILESTONES</small></article>
+<article class="dash-widget" draggable="true" data-widget="quick"><div class="widget-top"><span>QUICK ACTIONS</span><b>⌘</b></div><div class="quick-actions"><button class="btn outline" id="quickManga">＋ ADD MANGA</button><button class="btn outline" id="quickEntry">＋ ADD ENTRY</button><button class="btn outline" id="quickReport">↧ EXPORT CSV</button></div><small>YOUR SHORTCUTS</small></article>
+</div><section class="feature wrap"><div class="section-head"><div><div class="eyebrow">THE VISUAL UNIVERSE / 002</div><h2>BEYOND THE <em>FRAME.</em></h2></div><p class="muted">Different moods. Different worlds.<br>One collection, your own way.</p></div><div class="feature-grid"><article class="feature-tile large"><img src="assets/purple-cosplay-01.jpg" alt="Purple fantasy portrait"><div><span>01 / DREAMSCAPE</span><b>ANOTHER<br>DIMENSION</b></div></article><article class="feature-tile"><img src="assets/black-lace-hood.jpg" alt="Black lace portrait"><div><span>02 / NOIR MOOD</span><b>AFTER<br>DARK</b></div></article><article class="feature-tile"><img src="assets/crimson-lighter-portrait.jpg" alt="Crimson portrait"><div><span>03 / CRIMSON</span><b>LIGHT THE<br>SHADOW</b></div></article></div></section>
+<section class="archive wrap" id="archive"><div class="section-head"><div><div class="eyebrow">YOUR LIBRARY / 003</div><h2>THE <em>ARCHIVE.</em></h2><p class="muted">Fully editable. Changes save automatically on this device.</p></div><button class="btn primary" id="addArchive">＋ NEW ENTRY</button></div><div class="tools"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search titles, genres, notes..."><kbd>/</kbd></label><select id="statusFilter"><option value="All">All statuses</option><option>Completed</option><option>Watching</option><option>Reading</option><option>Plan to Watch</option><option>Plan to Read</option><option>On Hold</option><option>Dropped</option></select><select id="sortFilter"><option value="recent">Recently updated</option><option value="az">Title A–Z</option><option value="za">Title Z–A</option><option value="rating">Highest rated</option><option value="year">Newest year</option></select></div><div class="tabs" id="tabs"><button class="active" data-cat="All">ALL <b id="allCount">0</b></button><button data-cat="Anime">ANIME <b id="animeCount">0</b></button><button data-cat="Manga">MANGA <b id="mangaCount">0</b></button><button data-cat="TV Series">TV SERIES <b id="tvCount">0</b></button></div><div class="entry-grid" id="entryGrid"></div><div class="empty" id="empty" hidden><h3>NOTHING FOUND.</h3><p>Try a different search, or add your first entry.</p><button class="btn outline" id="clearFilters">CLEAR FILTERS</button></div><div class="archive-foot"><span id="showing">SHOWING 0 ENTRIES</span><span>YOUR COLLECTION NEVER ENDS ✦</span></div></section>
+<section class="manga-section wrap" id="manga"><div class="section-head"><div><div class="eyebrow">THE READING ROOM / 004</div><h2>TURN THE <em>PAGE.</em></h2><p class="muted">A separate shelf for manga. Import PDF volumes or image pages and read them here.</p></div><label class="btn primary upload">＋ ADD MANGA / CHAPTER<input id="mangaUpload" type="file" accept="application/pdf,image/*" multiple hidden></label></div>
+<div class="manga-tools"><label class="search"><span>⌕</span><input id="mangaSearch" type="search" placeholder="Search your manga shelf..."></label><select id="mangaSort"><option value="recent">Recently added</option><option value="az">Title A–Z</option></select><span class="manga-hint">PDF volumes + image-page chapters supported</span></div><div class="manga-grid" id="mangaGrid"></div><div class="empty" id="mangaEmpty" hidden><h3>YOUR READING SHELF IS EMPTY.</h3><p>Add a PDF volume or select multiple manga page images.</p></div></section><section class="gallery wrap" id="gallery"><div class="section-head"><div><div class="eyebrow">THE MOODBOARD / 004</div><h2>COLLECT THE <em>FEELING.</em></h2><p class="muted">Your saved visual universe. Add more images whenever you want.</p></div><label class="btn primary upload">＋ ADD IMAGES<input id="galleryUpload" type="file" accept="image/*" multiple hidden></label></div><div class="gallery-settings">
+  <details>
+    <summary><span>⚙ SLIDESHOW CONTROL CENTER</span><small>PERSONALIZE YOUR VISUAL EXPERIENCE</small></summary>
+    <div class="settings-grid">
+      <label class="setting-control">
+        <span>AUTO PLAY</span>
+        <select id="slideAuto">
+          <option value="on">ON · AUTOMATIC</option>
+          <option value="off">OFF · MANUAL</option>
+        </select>
+      </label>
+      <label class="setting-control">
+        <span>SLIDE INTERVAL</span>
+        <select id="slideInterval">
+          <option value="2000">2 SECONDS</option>
+          <option value="3000" selected>3 SECONDS</option>
+          <option value="5000">5 SECONDS</option>
+          <option value="8000">8 SECONDS</option>
+          <option value="10000">10 SECONDS</option>
+        </select>
+      </label>
+      <label class="setting-control">
+        <span>TRANSITION EFFECT</span>
+        <select id="slideEffect">
+          <option value="slide">CINEMATIC SLIDE</option>
+          <option value="fade">SOFT FADE</option>
+        </select>
+      </label>
+      <label class="setting-control">
+        <span>IMAGE FRAME</span>
+        <select id="slideFit">
+          <option value="contain" selected>SHOW COMPLETE IMAGE</option>
+          <option value="cover">FILL FRAME · CROP EDGES</option>
+        </select>
+      </label>
+    </div>
+    <p class="settings-note">Your settings are saved automatically on this device. Complete-image mode is recommended to keep every picture fully visible.</p>
+  </details>
+</div>
+
+<div class="slideshow-shell" id="slideshowShell">
+  <div class="slideshow-topline">
+    <span><i class="live-dot"></i> LIVE VISUAL FEED</span>
+    <span id="slideCounter">01 / 20</span>
+  </div>
+  <div class="slideshow-viewport" id="slideshowViewport">
+    <div class="slideshow-track" id="slideshowTrack"></div>
+    <button class="slide-arrow prev" id="slidePrev" type="button" aria-label="Previous image">‹</button>
+    <button class="slide-arrow next" id="slideNext" type="button" aria-label="Next image">›</button>
+    <div class="slide-caption" id="slideCaption">ZAZAN COLLECTIONS</div>
+  </div>
+  <div class="slideshow-toolbar">
+    <button class="slide-control" id="slideToggle" type="button">Ⅱ PAUSE</button>
+    <div class="slide-progress"><span id="slideProgress"></span></div>
+    <div class="slide-dots" id="slideDots" aria-label="Choose slide"></div>
+  </div>
+</div>
+
+<div class="gallery-footnote"><span>LOCAL IMAGE LIBRARY</span><span id="galleryCount">0 IMAGES</span></div></section>
+<section class="control-center wrap" id="controlCenter"><div class="section-head"><div><div class="eyebrow">SYSTEM CONFIGURATION / 006</div><h2>YOUR COMMAND <em>CENTER.</em></h2><p class="muted">Tune the look, alerts and dashboard layout of your archive.</p></div></div>
+<div class="control-grid">
+<article class="control-card"><span class="eyebrow">APPEARANCE</span><h3>Visual mode</h3><p>Switch between signature dark and clean light interface.</p><button class="btn primary" id="themeToggleSettings">TOGGLE DARK / LIGHT</button></article>
+<article class="control-card"><span class="eyebrow">DASHBOARD</span><h3>Widget visibility</h3><p>Choose which dashboard cards stay visible. Drag cards to rearrange them.</p><div class="widget-toggles"><label><input type="checkbox" data-widget-toggle="progress" checked> Progress chart</label><label><input type="checkbox" data-widget-toggle="achievements" checked> Achievements</label><label><input type="checkbox" data-widget-toggle="quick" checked> Quick actions</label></div></article>
+<article class="control-card"><span class="eyebrow">DATA TOOLS</span><h3>Reports & exports</h3><p>Export archive as CSV or print a PDF report.</p><div class="quick-actions"><button class="btn outline" id="csvReport">EXPORT CSV</button><button class="btn outline" id="pdfReport">PRINT / SAVE PDF</button></div></article>
+<article class="control-card"><span class="eyebrow">SMART ASSISTANT</span><h3>Archive assistant</h3><p id="assistantTip">Your archive insights will appear here.</p><button class="btn outline" id="assistantRefresh">GENERATE INSIGHT ↗</button></article></div>
+<div class="notification-panel"><div class="widget-top"><span>NOTIFICATION CENTER</span><button class="btn quiet" id="clearNotifications">CLEAR READ</button></div><div id="notificationList" class="notification-list"></div></div></section><section class="data-panel wrap"><div><div class="eyebrow">YOUR DATA / 005</div><h2>YOUR ARCHIVE.<br><em>YOUR CONTROL.</em></h2><p class="muted">Export a backup before changing devices. Restore your collection whenever you need it. Your edits are saved automatically in this browser.</p></div><div class="data-buttons"><button class="btn primary" id="exportBtn">↧ EXPORT BACKUP</button><label class="btn outline">↥ RESTORE BACKUP<input id="importFile" type="file" accept=".json,application/json" hidden></label><button class="btn outline" id="installBtn" hidden>＋ INSTALL APP</button><small>LOCAL DEVICE STORAGE · AUTO-SAVE ON</small></div></section></main>
+<footer class="footer"><div class="brand"><span class="mark">Z<sup>✦</sup></span><span>ZAZAN <b>COLLECTIONS</b><small>PERSONAL MEDIA ARCHIVE</small></span></div><span>DESIGNED IN THE DARK. BUILT TO KEEP.</span><a href="#home">BACK TO TOP ↑</a></footer>
+<dialog id="mangaReader" class="reader-dialog"><div class="reader-head"><div><div class="eyebrow">ZAZAN READING ROOM</div><h2 id="readerTitle">MANGA <em>READER.</em></h2></div><button class="close" id="closeReader">×</button></div><div class="reader-toolbar"><button class="btn outline" id="readerPrev">← PREVIOUS</button><span id="readerPageLabel">PAGE 1</span><button class="btn outline" id="readerNext">NEXT →</button></div><div id="readerStage" class="reader-stage"></div></dialog>
+<dialog id="globalSearchDialog" class="global-search-dialog"><div class="global-search-box"><div class="search"><span>⌕</span><input id="globalSearchInput" placeholder="Search entries, manga, sections..."><kbd>ESC</kbd></div><div id="globalSearchResults"></div><small>CTRL + K TO OPEN · ENTER TO GO</small></div></dialog>
+<dialog id="notificationDialog" class="notification-dialog"><div class="reader-head"><div><div class="eyebrow">SYSTEM ALERTS</div><h2>NOTIFICATION <em>CENTER.</em></h2></div><button class="close" id="closeNotifications">×</button></div><div id="notificationModalList" class="notification-list"></div></dialog><dialog id="editor" class="editor"><form id="entryForm"><div class="dialog-head"><div><div class="eyebrow" id="formLabel">NEW COLLECTION ENTRY</div><h2 id="formHeading">ADD TO YOUR <em>ARCHIVE.</em></h2></div><button type="button" class="close" id="closeEditor">×</button></div><input type="hidden" id="entryId"><div class="form-grid"><label class="field full">TITLE<input id="title" required maxlength="180" placeholder="Enter title"></label><label class="field">CATEGORY<select id="category"><option>Anime</option><option>Manga</option><option>TV Series</option><option>Custom</option></select></label><label class="field">STATUS<select id="status"><option>Plan to Watch</option><option>Watching</option><option>Completed</option><option>On Hold</option><option>Dropped</option><option>Reading</option><option>Plan to Read</option></select></label><label class="field">GENRES / TAGS<input id="genres" placeholder="Action, fantasy..."></label><label class="field">YEAR<input id="year" inputmode="numeric" maxlength="4" placeholder="2026"></label><label class="field">PERSONAL RATING<input id="rating" type="number" min="0" max="10" step=".1" placeholder="0–10"></label><label class="field">PROGRESS<input id="progress" placeholder="Season 2 · Episode 8"></label><label class="field full">NOTES<textarea id="notes" rows="3" placeholder="Your thoughts and memorable moments..."></textarea></label><div class="field full"><span>POSTER / COVER IMAGE</span><div class="poster-row"><img id="posterPreview" hidden alt="Poster preview"><label class="btn outline">CHOOSE IMAGE<input id="posterInput" type="file" accept="image/*" hidden></label><button type="button" class="btn quiet" id="removePoster">REMOVE IMAGE</button></div><small>Image files up to 12 MB are supported.</small></div></div><div class="dialog-actions"><button type="button" class="btn quiet" id="deleteEntry" hidden>DELETE ENTRY</button><span></span><button type="button" class="btn outline" id="cancelEditor">CANCEL</button><button type="submit" class="btn primary">SAVE ENTRY ↗</button></div></form></dialog>
+<dialog id="lightbox" class="lightbox"><button class="close" id="closeLightbox">×</button><img id="lightboxImg" alt="Gallery image"><p id="lightboxText"></p></dialog><div class="toast" id="toast" role="status"></div><script src="app.js"></script></body></html>
