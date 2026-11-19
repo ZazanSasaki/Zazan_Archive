@@ -1,0 +1,9 @@
+{
+  "name": "ZAZAN COLLECTIONS",
+  "short_name": "ZAZAN",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#09090d",
+  "theme_color": "#09090d",
+  "description": "Your personal anime, manga and series archive."
+}
